@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Missing Value</title>
+</head>
+
+<body>
+    <script>
+        function MisVal() {
+            var Arr = [1,6]
+            let MaxVal = getMaxNum(Arr);
+            for (i = 0; i < MaxVal; i++) {
+                // First Logic
+                if (!CheckArr(Arr, i + 1)) {
+                    console.log("**** Normal VNF **** " + (i + 1));
+                }
+                // Secound Logic
+                if (Arr.indexOf(i + 1) === -1) {
+                    console.log("### IndexOf VNF ### " + (i + 1));
+                }
+            }
+        }
+        function CheckArr(Arr, i) {
+            for (j = 0; j < Arr.length; j++) {
+                if (Arr[j] == i) {
+                    //console.log("Found>>>>"+Arr[j]);
+                    return true;
+                }
+            }
+            return false;
+        }
+        function getMaxNum(Arr) {
+            let MaxVal = 0;
+            for (i = 0; i < Arr.length; i++) {
+                if (MaxVal < Arr[i]) {
+                    MaxVal = Arr[i]
+                }
+            }
+            return MaxVal;
+        }
+        MisVal()
+    </script>
+</body>
+
+</html>
